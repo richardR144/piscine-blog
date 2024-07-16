@@ -8,6 +8,14 @@ error_reporting(E_ALL);
 
 session_set_cookie_params(3600);
 
+
+class dbConnexion {
+    private $dsn;
+    private $username;
+    private $password;
+}
+
+
 // mon localhost est sur mon windows port: 33306 de la base de donnée piscine.php, avec comme username root et password root
 $dsn = 'mysql:host=localhost:3306;dbname=piscine-blog';
 $username = 'root';
