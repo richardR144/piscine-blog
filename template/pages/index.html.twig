@@ -1,10 +1,15 @@
-{% include('partial/header.html.twig')%}
-
+{% extends 'base.html.twig' %}
 <!DOCTYPE html>
 <html>
+
 <head>
 </head>
+{% block content %}
 <body>
+<header>
+
+</header>
+
     <main>
 
 		<h1>Le super blog de la piscine</h1>
@@ -24,8 +29,9 @@
 
         </article>
 
-    {% endfor %}
+    
 
 	</main>
 </body>
+{% endfor content %}
 </html>

@@ -1,7 +1,10 @@
+{% extends 'base.html.twig' %}
 
 <head>
 <link rel="stylesheet" href="../public/asset/css/style.css"/>
 </head>
+{% block content %}
+<body>
 <header>
     <nav>
         <h3><a href="Contact">Contact</a></h3>
@@ -10,6 +13,15 @@
     <img src="../img/vecteur-degrade-logo-colore-oiseau_343694-1365.png">
 </nav>
 </header>
+<main>
 
+<article>
+<h2> {{.title}} </h2>
 
-   
+</main>
+
+<footer>
+<p>Copyright La Piscine</p>
+</footer> 
+</body>
+{% endfor content %}
