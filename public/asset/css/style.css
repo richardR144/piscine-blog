@@ -6,6 +6,21 @@ footer {
     background-color: black;
 }
 
+h3 a {
+    display: inline-block;
+}
+
+
+
 p {
     color: white;
 }
+
+h2 {
+    color: white;
+}
+
+h3 {
+    color: blueviolet;
+}
+

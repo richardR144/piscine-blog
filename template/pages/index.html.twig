@@ -1,0 +1,31 @@
+{% include('partial/header.html.twig')%}
+
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <main>
+
+		<h1>Le super blog de la piscine</h1>
+
+		<h2>Les derniers articles</h2>
+
+
+
+{% for article in articles %}
+
+        <article>
+            <h2>{{ article.title }}</h2>
+
+            <a href="http://localhost:3306/piscine-blog/public/show-article?id={{ article.id }}">Afficher l'article</a>
+
+            <a href="http://localhost:3306/piscine-blog/public/delete-article?id={{ article.id }}">Supprimer l'article</a>
+
+        </article>
+
+    {% endfor %}
+
+	</main>
+</body>
+</html>

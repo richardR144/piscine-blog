@@ -1,23 +1,29 @@
 <?php
-require_once('../config/config.php');
+require_once("../model/ArticleRepository.php");
+    
 
-
-$dbConnection = new dbConnection();
-$pdoConnection->connect();
-$stmt = $pdo->query("SELECT * from article");
-$articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-public function connect() {
-    try {
-        $pdo = new PDO("mysql:dsn=$this->dsn", $this->user, $this->password);
-        
-        return $pdo;
-    } catch (PDOException $e) {
-        
-        die("Erreur de connexion : " . $e->getMessage());
+    class IndexController {
+    
+        public function index() {
+            $articleRepository = new ArticleRepository();
+            $articles = $articleRepository->findAll();
+    
+            $loader = new \Twig\Loader\FilesystemLoader('../template');
+            $twig = new \Twig\Environment($loader);
+    
+            echo $twig->render('pages/index.html.twig', [
+                'articles' => $articles
+            ]);
+        }
     }
-}
 
 
-require_once('../template/pages/indexView.php');
 
+
+ 
+
+
+// on vient instancier notre fonction
+// $indexController = new IndexController();
+// j'appelle la méthode findAll() 
+// $indexController->index();
